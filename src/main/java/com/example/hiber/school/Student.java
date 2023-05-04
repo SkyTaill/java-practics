@@ -1,11 +1,16 @@
 package com.example.hiber.school;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name="STUDENT1")
 public class Student {
+    @Id
+    @GeneratedValue
     private int id;
+    @Column(name="name")
     private String name;
+    @Column(name="surname")
     private String surname;
 
 
