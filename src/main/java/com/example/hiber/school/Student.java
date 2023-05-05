@@ -3,7 +3,7 @@ package com.example.hiber.school;
 import javax.persistence.*;
 
 @Entity
-@Table(name="STUDENT1")
+@Table(name="student221")
 public class Student {
     @Id
     @GeneratedValue
