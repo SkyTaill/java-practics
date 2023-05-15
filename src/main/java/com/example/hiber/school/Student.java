@@ -2,19 +2,25 @@ package com.example.hiber.school;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 
 @Component
-public class Student {
+@CheckPostProcessor
+public class Student implements StudentTest {
+    @CheckPostProcessorName
     private String name="dsa";
+
     private String surname;
 
-
-    public Student( ) {
-
-    }
+@PostConstruct
+  private void init(){
+      this.surname="hellow";
+  }
 
     public String getName() {
         return name;
+
     }
 
     public void setName(String name) {

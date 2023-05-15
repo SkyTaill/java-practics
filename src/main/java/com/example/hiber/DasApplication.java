@@ -15,7 +15,7 @@ public class DasApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(DasApplication.class, args);
 
 		SchoolClass dependencyOwner = ctx.getBean(SchoolClass.class);
-		System.out.println(dependencyOwner.getStudent().getName());
+		System.out.println("start= "+dependencyOwner.getStudent().getName());
 	}
 
 }
