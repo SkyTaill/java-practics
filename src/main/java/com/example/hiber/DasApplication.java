@@ -1,34 +1,21 @@
 package com.example.hiber;
 
-import com.example.hiber.school.Student;
-import org.hibernate.cfg.Configuration;
+import com.example.hiber.school.SchoolClass;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.transaction.*;
+import org.springframework.context.ConfigurableApplicationContext;
+
+
 
 @SpringBootApplication
 public class DasApplication {
-	
-	public static void main(String[] args) throws SystemException, NotSupportedException, HeuristicRollbackException, HeuristicMixedException, RollbackException {
 
-		EntityManagerFactory factory = new Configuration()
-				.configure("hibernate.cfg.xml")
-				.buildSessionFactory();
-		EntityManager em = factory.createEntityManager();
-		Student student=new Student("dц","d");
+	public static void main(String[] args)  {
+	//	SpringApplication.run(DasApplication.class, args);
+		ConfigurableApplicationContext ctx = SpringApplication.run(DasApplication.class, args);
 
-		em.getTransaction().begin();
-		em.persist(student);
-		em.getTransaction().commit();
-
-
-		//классический вариант
-//	EntityManagerFactory emf= Persistence.createEntityManagerFactory("db");
-//	EntityManager em=emf.createEntityManager();
-
-
+		SchoolClass dependencyOwner = ctx.getBean(SchoolClass.class);
+		System.out.println(dependencyOwner.getStudent().getName());
 	}
 
 }

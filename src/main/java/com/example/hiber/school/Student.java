@@ -1,23 +1,16 @@
 package com.example.hiber.school;
 
-import javax.persistence.*;
+import org.springframework.stereotype.Component;
 
-@Entity
-@Table(name="student221")
+
+@Component
 public class Student {
-    @Id
-    @GeneratedValue
-    private int id;
-    @Column(name="name")
-    private String name;
-    @Column(name="surname")
+    private String name="dsa";
     private String surname;
 
 
-    public Student( String name, String surname) {
+    public Student( ) {
 
-        this.name = name;
-        this.surname = surname;
     }
 
     public String getName() {
@@ -38,7 +31,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
+
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 '}';
