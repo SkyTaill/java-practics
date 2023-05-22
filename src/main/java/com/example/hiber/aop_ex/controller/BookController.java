@@ -22,7 +22,7 @@ public class BookController {
 
     @GetMapping("/books/{title}")
     public CustomResponse<Book> getBookByTitle(@PathVariable("title") String title) {
-        return null;
+        return bookService.getBookByTitle(title);
     }
 
     @PostMapping("/books")

@@ -1,7 +1,10 @@
 package com.example.hiber.aop_ex.util;
 
+import lombok.Data;
+
 import java.util.Collection;
 
+@Data
 public class CustomResponse<T> {
     private int code;
     private String message;
