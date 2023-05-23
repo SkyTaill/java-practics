@@ -27,6 +27,6 @@ public class BookController {
 
     @PostMapping("/books")
     public CustomResponse<Book> addBook(@RequestBody Book book) {
-        return null;
+        return bookService.addBook(book);
     }
 }

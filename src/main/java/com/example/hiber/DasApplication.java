@@ -30,10 +30,6 @@ public class DasApplication implements CommandLineRunner {
 		JPAEx dependencyOwner = ctx.getBean(JPAEx.class);
 		dependencyOwner.getReqwest();
 
-
-
-
-
 	}
 
 	@Override
